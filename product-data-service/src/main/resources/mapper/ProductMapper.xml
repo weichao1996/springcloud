@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <!-- 增删改查 -->
+    <mapper namespace="cn.how2j.springcloud.mapper.ProductMapper">
+       
+        <select id="listProducts" resultType="cn.how2j.springcloud.pojo.Product">
+            select * from t_product    
+            <if test="start!=null and count!=null">
+                    limit #{start},#{count}
+            </if>
+        </select>
+        
+         <delete id="deleteproduct" parameterType="cn.how2j.springcloud.pojo.Product" >
+            delete from t_product where id= #{id}  
+        </delete>
+        
+        <select id="getproduct" parameterType="cn.how2j.springcloud.pojo.Product" resultType="cn.how2j.springcloud.pojo.Product">
+        	select * from t_product where id=#{id}  
+        </select>
+        
+        <update id="updateproduct" parameterType="cn.how2j.springcloud.pojo.Product">
+        	update t_product set name=#{name},price=#{price} where id=#{id}
+        </update>
+        
+        <insert id="addproduct" parameterType="cn.how2j.springcloud.pojo.Product">
+        	insert into t_product(name,price) values(#{name},#{price})
+        </insert>
+        
+        <select id="total" resultType="int">
+            select count(*) from t_product     
+        </select>
+    </mapper>
+    
+
