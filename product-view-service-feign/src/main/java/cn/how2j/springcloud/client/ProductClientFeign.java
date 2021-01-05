@@ -18,18 +18,21 @@ public interface ProductClientFeign {
     @RequestMapping(value = "/products" ,method = RequestMethod.GET,consumes="application/json")
     public List<Product> listProdcuts(Page page);
 
-    @RequestMapping(value = "/deleteproduct" ,method = RequestMethod.GET,consumes="application/json")
+    @RequestMapping(value = "/deleteproduct" ,method = RequestMethod.DELETE,consumes="application/json")
 	public void deleteproduct(@RequestBody Product product);
 
     @RequestMapping(value = "/getproduct" ,method = RequestMethod.GET,consumes="application/json")
 	public Product getproduct(Product product);
 
-    @RequestMapping(value = "/updateproduct" ,method = RequestMethod.GET,consumes="application/json")
+    @RequestMapping(value = "/updateproduct" ,method = RequestMethod.PUT,consumes="application/json")
 	public void updateproduct(Product product);
 
-    @RequestMapping(value = "/addproduct" ,method = RequestMethod.GET,consumes="application/json")
+    @RequestMapping(value = "/addproduct" ,method = RequestMethod.POST,consumes="application/json")
 	public void addproduct(Product product);
 
     @GetMapping("/total")
 	public int total();
+
+    @RequestMapping(value = "/creatOrder" ,method = RequestMethod.POST,consumes="application/json")
+	public void creatOrder(Product product);
 }

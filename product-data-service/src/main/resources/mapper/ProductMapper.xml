@@ -21,7 +21,7 @@
         </select>
         
         <update id="updateproduct" parameterType="cn.how2j.springcloud.pojo.Product">
-        	update t_product set name=#{name},price=#{price} where id=#{id}
+        	update t_product set name=#{name},price=#{price},count=#{count} where id=#{id}
         </update>
         
         <insert id="addproduct" parameterType="cn.how2j.springcloud.pojo.Product">
@@ -31,6 +31,11 @@
         <select id="total" resultType="int">
             select count(*) from t_product     
         </select>
+        
+        <insert id="insertOrder" parameterType="cn.how2j.springcloud.pojo.Order">
+        	insert into t_order(productID,count) values(#{productID},#{count})
+        </insert>
+       
     </mapper>
     
 

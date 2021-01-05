@@ -32,4 +32,6 @@ public interface ProductService {
 	public void addproduct(Product product);
 
 	public int total();
+
+	public void creatOrder(Product product) throws Exception;
 }

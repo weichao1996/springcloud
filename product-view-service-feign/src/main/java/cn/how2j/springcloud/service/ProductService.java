@@ -22,6 +22,7 @@ public class ProductService {
 	}
 	public Product getproduct(Product product) {
 		// TODO Auto-generated method stub
+		Product Product1=new Product();
 		return productClientFeign.getproduct(product);
 	}
 	public void updateproduct(Product product) {
@@ -35,6 +36,10 @@ public class ProductService {
 	public int total() {
 		// TODO Auto-generated method stub
 		return productClientFeign.total();
+	}
+	public void creatOrder(Product product) {
+		// TODO Auto-generated method stub
+		productClientFeign.creatOrder(product);
 	}
 
 }

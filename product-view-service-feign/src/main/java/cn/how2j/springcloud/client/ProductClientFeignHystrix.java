@@ -50,4 +50,10 @@ public class ProductClientFeignHystrix implements ProductClientFeign{
 		return 0;
 	}
 
+	@Override
+	public void creatOrder(Product product) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
