@@ -61,7 +61,6 @@
                 <th>价格</th>
                 <th>库存</th>
                 <th>购买</th>
-                <th>数量</th>
                 <td>编辑</td>
                 <th>删除</th>
             </tr>
@@ -73,18 +72,17 @@
                 <td th:text="${p.price}"></td>
                 <td th:text="${p.count}"></td>
                 <td><a href="#" th:href="@{/creatOrder(id=${p.id},count='1')}">购买</a></td>
-                <td><input type="text" id="count" name="count"></td>
                 <td><a href="#" th:href="@{/getproduct(id=${p.id})}">编辑</a></td>
                 <td> <a href="#" th:href="@{/deleteproduct(id=${p.id},name=${p.name},price=${p.price})}">删除</a></td>
             </tr>
         </tbody>
         <tr>
-            <td align="center" colspan="6">
+            <td align="center" colspan="7">
                 <p th:text="${version}" >how2j springcloud version unknown</p>
             </td>
         </tr>
         <tr>
-            <td align="center" colspan="6">
+            <td align="center" colspan="7">
                 <p th:text="'视图端口：'+${port}" >how2j springcloud port unknown</p>
             </td>
         </tr>
